@@ -1,0 +1,161 @@
+<!doctype html>
+<html>
+<head>
+	<title></title>
+
+  <script src="js/jquery.min.js"></script>
+<script  src="js/jquery-ui.min.js"></script> 
+<link rel="stylesheet" type="text/css" href="css/estilo.css">
+
+ 
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ 
+</head>
+<img src="imagenes/fondo.png" id="fondo"  class="noseleccionable">
+<div id="consigna" class="noseleccionable">Selecciona la nomenclatura correspondiente de la siguiente tabla.</div>
+<body onresize="ajustar()" onload="inicio()">
+ 
+ <table class="tabla noseleccionable">
+  <tbody>
+    <tr>
+      <th class="cabecera">Fórmula</th>
+      <th class="cabecera">Tradicional</th>
+      <th class="cabecera">Iupac</th>
+      <th class="cabecera">Numerales de stock</th>
+       
+    </tr>
+    <tr>
+      
+      <td   class="formula" >CaO</td>
+      <td  >Óxido de calcio</td>
+      <td  id="td1" > 
+     <select  id="n1" class="combo" onchange="selecionado(event)" style="padding-left:10%;" >
+         <option  value="0" selected >Trióxido de calcio</option>
+         <option  value="1" >Monóxido de calcio</option>
+         <option  value="0" >Dióxido de calcio</option>
+
+      </select>
+
+      </td>
+      <td >Óxido de calcio II </td>
+    </tr>
+
+      <tr>
+      <td  class="formula" > Ni<span class="subindice">2</span>O<span class="subindice">3</span></td>
+      <td > <select  id="n2" class="combo" onchange="selecionado(event)" style="padding-left:4%;">
+         <option  value="0"  selected>Dióxido de níquel</option>
+         <option  value="0" >Óxido de níquel</option>
+         <option  value="1" >Óxido niquélico</option>
+
+      </select> </td>
+      <td > Trióxido diníquel </td>
+      <td >  
+   <select  id="n3" class="combo" onchange="selecionado(event)" style="padding-left:10%;">
+         <option  value="0" selected> Óxido niquélico</option>
+         <option  value="0" >Dióxido de níquel </option>
+         <option  value="1" >Óxido níquel (II)</option>
+
+      </select>
+      </td>
+    </tr>
+
+    <tr>
+      <td  class="formula" > PbO</td>
+      <td > <select  id="n4" class="combo" onchange="selecionado(event)" style="padding-left:10%;">
+         <option  value="0" selected> Óxido de plomo</option>
+         <option  value="0" >Trióxido de diplomo</option>
+         <option  value="1" >Óxido plumboso</option>
+
+      </select> </td>
+      <td > Monóxido de plomo</td>
+      <td > 
+   <select  id="n5" class="combo" onchange="selecionado(event)" style="padding-left:10%;">
+         <option  value="0" selected> Óxido plumboso</option>
+         <option  value="0" >Trióxido de diplomo</option>
+         <option  value="1" >Óxido de plomo</option>
+
+      </select>
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="formula" > Au<span class="subindice">2</span>O<span class="subindice">3</span></td>
+      <td > Óxido áurico</td>
+      <td >  
+      <select  id="n6" class="combo" onchange="selecionado(event)" style="padding-left:10%;">
+         <option  value="0" selected>Óxido de dioro</option>
+         <option  value="0" >Óxido áurico</option>
+         <option  value="1" >Trióxido de dioro</option>
+
+      </select>
+      </td>
+      <td >Óxido de oro (III)</td>
+    </tr>
+
+    <tr>
+      <td class="formula" >CU<span class="subindice">2</span>O</td>
+      <td >Óxido cuproso </td>
+      <td > <select  id="n7" class="combo" onchange="selecionado(event)" style="padding-left:4%;">
+         <option  value="0" selected>Trióxido de dicobre </option>
+         <option  value="0" >Óxido cúprico</option>
+         <option  value="1" >Monóxido de dicobre</option>
+
+      </select> </td>
+      <td >
+
+  <select  id="n8" class="combo" onchange="selecionado(event)" style="padding-left:10%;">
+         <option  value="0" selected>Óxido cúprico</option>
+         <option  value="0" >Monóxido de dicobre</option>
+         <option  value="1" >Óxido de cobre II</option>
+       </td>
+    </tr>
+
+    <tr>
+      <td class="formula" >SiO<span class="subindice">2</span></td>
+      <td > <select  id="n9" class="combo" onchange="selecionado(event)" style="padding-left:4%;">
+         <option  value="0" selected> Óxido de silicio IV</option>
+         <option  value="0" >Dióxido de silicio</option>
+         <option  value="1" >Anhídrido silícico</option>
+       </td>
+      <td > Dióxido de silicio </td>
+      <td >
+       <select  id="n10" class="combo" onchange="selecionado(event)" style="padding-left:0%;">
+         <option  value="0" selected> Monóxido de silicio</option>
+         <option  value="1" > Óxido de silicio IV</option>
+         <option  value="0" >Anhídrido silícico </option>
+         
+       </td>
+    </tr>
+
+    <tr>
+      <td class="formula" >I<span class="subindice">2</span>O </td>
+      <td > Anhídrido hipoyodoso</td>
+      <td > <select  id="n11" class="combo" onchange="selecionado(event)" style="padding-left:4%;">
+         <option  value="0" selected> Óxido de yodo V</option>
+         <option  value="1" >Óxido de diyodo </option> 
+         <option  value="0" >Monóxido de yodo</option>
+         
+       </td>
+      <td >óxido de yodo I </td>
+    </tr>
+    <tr>
+      <td class="formula" >Br<span class="subindice">2</span>O<span class="subindice">7</span> </td>
+      <td >Anhídrido perbrómico</td>
+      <td > <select  id="n12" class="combo" onchange="selecionado(event)" style="padding-left:10%;">
+         <option  value="0" selected> Dióxido de bromo</option>
+         <option  value="0" >Heptaóxido de bromo </option>
+         <option  value="1" >Heptaóxido de dibromo </option>  </td>
+
+      <td > <select  id="n13" class="combo" onchange="selecionado(event)" style="padding-left:4%;">
+         <option  value="0" selected>Dióxido de bromo</option>
+         <option  value="0" >Óxido de dibromo</option>
+         <option  value="1" >Óxido de bromo VII</option> </td>
+    </tr>
+   
+ 
+      </tbody>
+  </table>
+<script  src="js/OZGFunciones.js"></script>
+
+</body>
+</html>
